@@ -1,0 +1,6 @@
+-- Your SQL goes here
+CREATE TABLE sales (
+  id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  product_id INTEGER NOT NULL,
+  sold_on INTEGER NOT NULL
+);
