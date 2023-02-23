@@ -3,6 +3,7 @@ import { invoke } from "@tauri-apps/api";
 import toast, { Toaster } from "react-hot-toast";
 import { products } from "../data/products";
 import { IoCheckmark, IoCheckmarkCircle } from "react-icons/io5";
+import axios from "axios";
 
 const ProductsPage: NextPage = () => {
   const buyProduct = (productId: number) => async () => {
@@ -22,7 +23,25 @@ const ProductsPage: NextPage = () => {
       console.error("ERROR", e);
       toast(JSON.stringify(e));
     }
-    //toast("Here is your toast." + product_id);
+
+    try {
+      const resp = await axios.post(
+        "https://hermes-m11n-demo.io.technogi.com.mx/",
+        {
+          "event-type": "NewSale",
+          "product-id": productId,
+          "sold-on": Date.now(),
+        },
+        {
+          headers: {
+            "X-Api-Key": "je5uvQ3fX88zh8I0rKzdR4FxSTxqln2CaOFjQ1R7",
+          },
+        }
+      );
+    } catch (e) {
+      console.error("ERROR", e);
+      //  toast(JSON.stringify(e));
+    }
   };
 
   return (

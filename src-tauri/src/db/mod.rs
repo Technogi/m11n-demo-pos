@@ -7,6 +7,7 @@ use dotenv::dotenv;
 use models::{NewSale,Sale};
 use std::env;
 use chrono::Utc;
+use std::collections::HashMap;
 
 
 pub fn establish_connection() -> SqliteConnection {
@@ -26,6 +27,7 @@ pub fn sales_create(conn: &SqliteConnection, product_id: i32){
     .values(&new_sale)
     .execute(conn)
     .expect("Error saving new sale");
+
 }
 
 pub fn sales_list(conn: &SqliteConnection) -> String {

@@ -41,6 +41,9 @@ function App() {
         <Selector icon={IoAnalytics} url="sales" />
         <Selector icon={IoHelp} url="help" />
       </div>
+      <div>
+        <Link href={"/cli/products"}>cli</Link>
+      </div>
     </div>
   );
 }

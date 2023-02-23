@@ -5,7 +5,15 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        mono: ["monospace"],
+      },
+      colors: {
+        magenta: "#a70e9e",
+        "blue-cli": "#0400a1",
+      },
+    },
   },
   plugins: [],
 };
