@@ -29,7 +29,7 @@ const CliHomePage: NextPage = () => {
       <div className="text-center mt-2 text-xl text-orange-400">
         Bienvenido a POS-1986
       </div>
-      <div className="text-center mb-4 text-yellow-200"> versión 24.2</div>
+      <div className="text-center mb-4pp text-yellow-200"> versión 24.2</div>
       <POSBanner />
     </CliLayout>
   );
